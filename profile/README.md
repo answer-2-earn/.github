@@ -1,4 +1,4 @@
-![Cover](/profile/Cover.png)
+![Cover](/profile/cover.png)
 
 # ❓ Answer 2 Earn
 
@@ -60,4 +60,4 @@ The Mini-App facilitates a question-and-answer interaction between users (Askers
 
 ## 🏗️ Architecture
 
-![Architecture](/profile/Architecture.png)
+![Architecture](/profile/architecture.png)
