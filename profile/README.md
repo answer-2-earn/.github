@@ -12,17 +12,13 @@ In the past, personal question and answer apps have been popular and viral. The 
 
 The Mini-App facilitates a question-and-answer interaction between users (Askers and Answerers) on the LUKSO Mainnet, leveraging Universal Profiles and smart contracts.
 
-- **Setup (Answerer)**
-
-  - The Answerer obtains the Mini-App link and integrates it into their Universal Profile grid.
-
 - **Asking a Question (Asker)**
 
   - The Asker navigates to the Answerer's profile on Universal Everything.
   - Connects their Universal Profile to the Mini-App using `@up-provider`.
-  - Submits a question including text and a selected reward amount (0.01, 0.05, or 0.1 LYX).
+  - Submits a question including text and a LYX reward.
   - The backend generates LSP8 token metadata for the question using `erc725.js` and uploads it to Pinata IPFS.
-  - An LSP8 token representing the question is minted via the `Question` smart contract on the LUKSO Mainnet.
+  - An LSP8 token representing the question is minted via the `QuestionManager` and `Question` smart contracts on the LUKSO Mainnet.
 
 - **Answering a Question (Answerer)**
 
@@ -31,14 +27,15 @@ The Mini-App facilitates a question-and-answer interaction between users (Askers
   - Views a list of unanswered questions, sortable by reward amount.
   - Selects and submits an answer to a chosen question.
   - An AI service (Gemini 2.5 Flash) verifies if the answer is relevant to the question.
-  - If the answer is valid, the `Question` smart contract transfers the specified LYX reward to the Answerer's Universal Profile.
+  - If the answer is valid, the `QuestionManager` smart contract transfers the specified LYX reward to the Answerer's Universal Profile.
 
 ## 🔗 Artifacts
 
 - Application - https://answer-2-earn.vercel.app/
 - Demo - https://universaleverything.io/0x4018737e0D777b3d4C72B411a3BeEC286Ec5F5eF?assetGroup=grid
 - Contracts (LUKSO Mainnet):
-  - Question - https://explorer.execution.mainnet.lukso.network/address/0xf81abf7d2d09369cda771f4b432ef01e75576759#code
+  - Question - https://explorer.execution.mainnet.lukso.network/address/0x67e3648A46f970f91D2989643bF8479b76795Bb2
+  - Question Manager - https://explorer.execution.mainnet.lukso.network/address/0xe9b3E53Cd4f92DE36aF02e9B763c3Fe5eb02ee0C
 
 ## 🛠️ Technologies
 
@@ -49,14 +46,6 @@ The Mini-App facilitates a question-and-answer interaction between users (Askers
 - erc725.js library is used to encode and decode profile and question metadata.
 - Pinata IPFS is used to store metadata with questions and answers.
 - Gemini AI is used to verify that answers match questions.
-
-## 🔮 Plans
-
-- Integrate oracle to use AI to verify answers in a more decentralized way.
-- Add LUKSO UI components to make the app appearance more native.
-- Implement anonymous questions.
-- Add a referral program to engage users to share the app and attract their friends.
-- Collaborate with influencers to reach a big audience.
 
 ## 🏗️ Architecture
 
